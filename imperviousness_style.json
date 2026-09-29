@@ -1,0 +1,175 @@
+{
+  "variables": {
+    "vmin": 0,
+    "vmax": 100
+  },
+  "color": [
+    "case",
+    [
+      "any",
+      [
+        "==",
+        [
+          "band",
+          2
+        ],
+        0
+      ],
+      [
+        "==",
+        [
+          "band",
+          1
+        ],
+        255
+      ],
+      [
+        "<",
+        [
+          "band",
+          1
+        ],
+        5
+      ]
+    ],
+    [
+      "color",
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "interpolate",
+      [
+        "linear"
+      ],
+      [
+        "/",
+        [
+          "-",
+          [
+            "band",
+            1
+          ],
+          [
+            "var",
+            "vmin"
+          ]
+        ],
+        [
+          "-",
+          [
+            "var",
+            "vmax"
+          ],
+          [
+            "var",
+            "vmin"
+          ]
+        ]
+      ],
+      0.0,
+      [
+        255,
+        245,
+        240,
+        1
+      ],
+      0.143,
+      [
+        254,
+        224,
+        210,
+        1
+      ],
+      0.286,
+      [
+        252,
+        187,
+        161,
+        1
+      ],
+      0.429,
+      [
+        252,
+        146,
+        114,
+        1
+      ],
+      0.571,
+      [
+        251,
+        106,
+        74,
+        1
+      ],
+      0.714,
+      [
+        239,
+        59,
+        44,
+        1
+      ],
+      0.857,
+      [
+        203,
+        24,
+        29,
+        1
+      ],
+      1.0,
+      [
+        153,
+        0,
+        13,
+        1
+      ]
+    ]
+  ],
+  "legend": {
+    "title": "Soil sealing / imperviousness [%] (Copernicus HRL 2024)",
+    "range": [
+      "rgba(255, 245, 240, 1)",
+      "rgba(254, 224, 210, 1)",
+      "rgba(252, 187, 161, 1)",
+      "rgba(252, 146, 114, 1)",
+      "rgba(251, 106, 74, 1)",
+      "rgba(239, 59, 44, 1)",
+      "rgba(203, 24, 29, 1)",
+      "rgba(153, 0, 13, 1)"
+    ],
+    "domainProperties": [
+      "vmin",
+      "vmax"
+    ]
+  },
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "vminmax": {
+        "title": "Imperviousness",
+        "description": "[%]",
+        "type": "object",
+        "properties": {
+          "vmin": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "format": "range",
+            "default": 0
+          },
+          "vmax": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "format": "range",
+            "default": 100
+          }
+        },
+        "format": "minmax"
+      }
+    }
+  }
+}

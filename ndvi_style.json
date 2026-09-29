@@ -1,0 +1,171 @@
+{
+  "variables": {
+    "vmin": -0.1,
+    "vmax": 0.8
+  },
+  "color": [
+    "case",
+    [
+      "==",
+      [
+        "band",
+        2
+      ],
+      0
+    ],
+    [
+      "color",
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      "interpolate",
+      [
+        "linear"
+      ],
+      [
+        "/",
+        [
+          "-",
+          [
+            "band",
+            1
+          ],
+          [
+            "var",
+            "vmin"
+          ]
+        ],
+        [
+          "-",
+          [
+            "var",
+            "vmax"
+          ],
+          [
+            "var",
+            "vmin"
+          ]
+        ]
+      ],
+      0.0,
+      [
+        165,
+        0,
+        38,
+        1
+      ],
+      0.111,
+      [
+        215,
+        48,
+        39,
+        1
+      ],
+      0.222,
+      [
+        244,
+        109,
+        67,
+        1
+      ],
+      0.333,
+      [
+        253,
+        174,
+        97,
+        1
+      ],
+      0.444,
+      [
+        254,
+        224,
+        139,
+        1
+      ],
+      0.556,
+      [
+        217,
+        239,
+        139,
+        1
+      ],
+      0.667,
+      [
+        166,
+        217,
+        106,
+        1
+      ],
+      0.778,
+      [
+        102,
+        189,
+        99,
+        1
+      ],
+      0.889,
+      [
+        26,
+        152,
+        80,
+        1
+      ],
+      1.0,
+      [
+        0,
+        104,
+        55,
+        1
+      ]
+    ]
+  ],
+  "legend": {
+    "title": "Vegetation index NDVI (Sentinel-2, 1–15 Aug 2026)",
+    "range": [
+      "rgba(165, 0, 38, 1)",
+      "rgba(215, 48, 39, 1)",
+      "rgba(244, 109, 67, 1)",
+      "rgba(253, 174, 97, 1)",
+      "rgba(254, 224, 139, 1)",
+      "rgba(217, 239, 139, 1)",
+      "rgba(166, 217, 106, 1)",
+      "rgba(102, 189, 99, 1)",
+      "rgba(26, 152, 80, 1)",
+      "rgba(0, 104, 55, 1)"
+    ],
+    "domainProperties": [
+      "vmin",
+      "vmax"
+    ]
+  },
+  "jsonform": {
+    "type": "object",
+    "title": "Data configuration",
+    "properties": {
+      "vminmax": {
+        "title": "NDVI",
+        "type": "object",
+        "properties": {
+          "vmin": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "format": "range",
+            "default": -0.1
+          },
+          "vmax": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1,
+            "format": "range",
+            "default": 0.8
+          }
+        },
+        "format": "minmax"
+      }
+    }
+  }
+}
